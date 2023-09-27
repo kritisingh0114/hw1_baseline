@@ -8,8 +8,7 @@ public class InputValidation{
     private String message = "";
     
     /*This funciton validates the amount that the user enters into the amount field by converting the string input amount into an object Double
-    and making sure that it is possible for the string to be converted into a number (if not an exception will be thrown). Additionally, the number
-    has to follow the > 0 and < 1000 constraints, if it is not followed an exception will be thrown.
+    and making sure that it is possible for the string to be converted into a number. Additionally, the number has to follow the > 0 and < 1000 constraints.
     Input:
     String amount: This is the amount that the user entered into the amount field
     Return:
@@ -31,6 +30,25 @@ public class InputValidation{
         if(Double.parseDouble(amount) < 0 || Double.parseDouble(amount) >= 1000){
             valid_amount = false;
             message = message + "The price should between 1 (inclusive) and 999 (inclusive). ";
+        }
+    }
+
+    /*This funciton validates the category that the user enters into the category field checking that the category is
+    one of the 5 valid categories
+    Input:
+    String category: This is the category that the user entered into the category field
+    Return:
+    Void
+    */ 
+    public void categoryFunction(String category){
+        valid_category = true;
+        // List of valid categories
+        List<String> categories = Arrays.asList("food", "travel","entertainment","bills","other");
+        // if the input category is not valid, update message
+        if(!(categories.contains(category.toLowerCase()))){
+            valid_category = false;
+            message = message + "The category should be any of these: food, travel, bills, entertainment, other.";
+
         }
     }
 }
