@@ -31,6 +31,12 @@ public class ExpenseTrackerApp {
       // Create transaction object
       Transaction t = new Transaction(amount, category);
 
+      // create a new InputValidation object
+      InputValidation validator = new InputValidation();
+
+      //validate input for amount (after converting amount to string)
+      validator.amountFunction(String.valueOf(amount));
+
       // Call controller to add transaction
       view.addTransaction(t);
     });
