@@ -51,4 +51,19 @@ public class InputValidation{
 
         }
     }
+
+    /*This funciton will throw an Arithmetic expression if either the amount or category is not valid. It will
+    also open a pop up and display informtion to the user about which field is incorrect
+    Input:
+    None
+    Return:
+    Void
+    */ 
+    public void throwException(){
+        // If input is not valid (either for amount or category), display message to user (pop up)
+        if(!valid_amount || !valid_category) {
+            JOptionPane.showMessageDialog(null, message);
+            throw new ArithmeticException(message);
+        }
+    }
 }

@@ -40,6 +40,9 @@ public class ExpenseTrackerApp {
       //validate input for category (after converting amount to string)
       validator.categoryFunction(category);
 
+      //Throw exception if needed
+      validator.throwException();
+
       // Call controller to add transaction
       view.addTransaction(t);
     });
